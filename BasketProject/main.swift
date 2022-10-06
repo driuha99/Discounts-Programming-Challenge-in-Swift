@@ -18,9 +18,12 @@ let itemE = Item(id: 4, type: .E, price: 5.00, discount: .xForY(discountPrice: 1
 
 
 
-//example.addToBasket(item: itemA, ocurence: 3)
 
-example.addToBasket(item: itemD, ocurence: 14)
+example.addToBasket(item: itemD, ocurence: 3)
+
+
+print("Total price: £\(example.getTotalPrice().totalPrice)")
+print("Delivery cost: £\(example.getTotalPrice().deliveryCharge)")
 
 
 

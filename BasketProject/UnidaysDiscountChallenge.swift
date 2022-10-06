@@ -12,18 +12,20 @@ class UnidaysDiscountChallenge {
     
     private var basket: [Item : Int] = [:]
     
+    // TODO: - Remove print function after testing
     private var toatlPrice: Float = 0.0 {
         didSet {
             print(toatlPrice)
         }
     }
     
+    // Check if delivery charge is applicable
     private var deliveryCharge: Float {
         return toatlPrice >= 50 ? 0.0 : 7.0
     }
     
     
-    // Returns all the items into the basket -> Item A: 3, Item C: 2, Item D: 4
+    // Returns items into the basket -> ItemA, ItemB...
     private var totalItemsIntoBasket: Int {
         return basket.values.reduce(0) { $0 + $1 }
     }
@@ -70,7 +72,7 @@ class UnidaysDiscountChallenge {
         
     }
     
-    // Method that calculae the price of the accumalted items into the basket
+    // Retrun total price and delivery charge price
     public func getTotalPrice() -> (totalPrice: Float, deliveryCharge: Float) {
         return (toatlPrice,deliveryCharge)
     }
